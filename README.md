@@ -1,4 +1,4 @@
-git clone o projeto 
+git clone https://github.com/ed-an/deep-queue-laravel.git
 
 
 instale docker:
@@ -9,9 +9,11 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-c
 
 
 ```
-docker run --rm -v $(pwd):/app composer/composer create-project --prefer-dist  laravel/laravel src "8.*"
+docker run --rm -v $(pwd):/app composer/composer create-project --prefer-dist  laravel/laravel src "9.*"
 ```
-
+```
+chown -R $user:$user -R src
+```
 ```
 export USER=$(whoami) && export  IDUSER=$(id -u)
 ```
