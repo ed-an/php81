@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:8.1.0-fpm
 
 # get argument defined in docker-compose file.
 
@@ -28,7 +28,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install gd \
     && docker-php-source delete \
     && pecl install mongodb \
-    && docker-php-ext-enable mongodb
+    && docker-php-ext-enable mongodb \
+    && docker-php-ext-install sockets
 
 #clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -42,7 +43,7 @@ RUN mkdir -p /home/$user/.composer && \
     chown -R $user:$user /home/$user
 
 #Install node
-ARG NODE_VERSION=16.15.1
+ARG NODE_VERSION=18.12.0
 ARG NODE_PACKAGE=node-v$NODE_VERSION-linux-x64
 ARG NODE_HOME=/opt/$NODE_PACKAGE
 ENV NODE_PATH $NODE_HOME/lib/node_modules

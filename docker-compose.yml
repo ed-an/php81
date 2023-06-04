@@ -8,7 +8,7 @@ services:
       context: ./.docker
       dockerfile: Dockerfile
     image: laravelapp
-    container_name: queue-app
+    container_name: app
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
@@ -19,7 +19,7 @@ services:
 
   db:
     image: "mysql:latest"
-    container_name: queue-db
+    container_name: db
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     volumes:
@@ -34,7 +34,7 @@ services:
 
   mongodb:
     image: "mongo:3.6"
-    container_name: queue-mongo
+    container_name: mongo
     ports:
       - "27017:27017"
     volumes:
@@ -44,7 +44,7 @@ services:
 
   nginx:
     image: nginx:1.17-alpine
-    container_name: queue-nginx
+    container_name: nginx
     restart: unless-stopped
     ports:
       - 8000:80
@@ -56,6 +56,7 @@ services:
 
   redis:
     image: "redis:2.8"
+    container_name: redis
     ports:
      - "6379:6379"
     volumes:
@@ -65,7 +66,7 @@ services:
   
   rabbitmq:
     image: "rabbitmq:3-management"
-    container_name: queue-rabbitmq
+    container_name: rabbitmq
     ports:
      - "15672:15672"
      - "5672:5672"
