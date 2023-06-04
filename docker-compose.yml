@@ -56,7 +56,11 @@ services:
 
   redis:
     image: "redis:2.8"
+<<<<<<< HEAD
     container_name: redis
+=======
+    container_name: queue-redis
+>>>>>>> 3762b7fb5e7667104835515bc13cee3c1f6b31d0
     ports:
      - "6379:6379"
     volumes:
