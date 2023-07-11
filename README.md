@@ -7,7 +7,18 @@ instale docker-compose:
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04
 
 
-```mkdir  src 
+```
+mkdir -p src/public 
+```
+
+```
+touch src/public/index.php
+```
+
+```
+<?php
+
+echo 'hello world';
 ```
 ```
 chown -R $user:$user -R src
@@ -17,11 +28,4 @@ export USER=$(whoami) && export  IDUSER=$(id -u)
 ```
 ```
 docker-compose up -d --build
-```
-
-````
-php artisan queue:table
-````
-```
-php artisan migrate
 ```
