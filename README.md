@@ -1,5 +1,4 @@
-git clone https://github.com/ed-an/deep-queue-laravel.git
-
+git clone https://github.com/ed-an/php81.git
 
 instale docker:
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
@@ -8,8 +7,7 @@ instale docker-compose:
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04
 
 
-```
-docker run --rm -v $(pwd):/app composer/composer create-project --prefer-dist  laravel/laravel src "9.*"
+```mkdir  src 
 ```
 ```
 chown -R $user:$user -R src
