@@ -29,3 +29,7 @@ export USER=$(whoami) && export  IDUSER=$(id -u)
 ```
 docker-compose up -d --build
 ```
+
+```
+localhost:8000
+```
